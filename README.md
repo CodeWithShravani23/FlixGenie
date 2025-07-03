@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# 🎬 FlixGenie
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**FlixGenie** is a Netflix-inspired movie streaming UI powered by AI. Unlike typical recommendation systems, Flix Genies integrates a **Genie Assistant**—an AI-powered prompt system that suggests movies based on your custom mood, genre, or story description using a third-party API.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- 🔐 **User Authentication**  
+  - Sign up and Sign in using Firebase Authentication  
+  - Secure session handling
 
-### `npm start`
+- 🤖 **AI Movie Suggestion Genie**  
+  - Type in how you feel or what you're looking for ("I want a romantic movie set in Paris with a happy ending")  
+  - The Genie will return relevant movies using a descriptive prompt-based API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🎥 **Netflix-like UI**  
+  - Trending, Popular, Top-rated movies displayed in responsive horizontal cards  
+  - Movie banners, trailers, and metadata preview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 📱 **Responsive Design**  
+  - Fully responsive and mobile-friendly UI using modern CSS/React styling
 
-### `npm test`
+## 🛠️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**: React.js, Tailwind CSS / Styled Components  
+- **Authentication**: Firebase Auth  
+- **AI Integration**: AI/LLM Movie Suggestion API (e.g., OpenAI, GPT-based)  
+- **Routing**: React Router  
+- **State Management**: Redux Toolkit or Context API  
+- **HTTP Client**: Fetch API / Axios
 
-### `npm run build`
+## 🔧 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/flix-genies.git
+cd flix-genies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
