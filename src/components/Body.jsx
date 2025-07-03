@@ -2,14 +2,14 @@ import React from 'react'
 import Header from './Header'
 import Browse from './Browse'
 import {createBrowserRouter} from "react-router-dom"
-import {RouterProvider} from "react-rouet-dom";
-import Login from './Login';
+import {RouterProvider} from "react-router-dom";
+import { Landing } from './Landing';
 
 const Body = () => {
     const appRouter =createBrowserRouter([
         {
             path:"/",
-            element:<Login/>
+            element:<Landing/>
         },
     
          {
