@@ -1,11 +1,12 @@
-import React from 'react'
-import Header from './Header'
-import Login from './Login'
-import Faq from './Faq'
+import React from 'react';
+import Header from './Header';
+import Login from './Login';
+import Footer from './Footer';
+import Faq from './Faq';
 
 export const Landing = () => {
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative min-h-screen w-full text-white">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
@@ -16,15 +17,21 @@ export const Landing = () => {
       />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
+      <div className="absolute inset-0 bg-black opacity-70   z-10" />
 
-      {/* Header (Logo stays on top) */}
-      <div className="relative z-20">
+      {/* Content */}
+      <div className="relative z-20 flex flex-col min-h-screen">
         <Header />
-      </div>
-      <div className="relative z-20 flex justify-center items-center h-full">
-        <Login/>
+
+        {/* Login Section */}
+        <div className="flex-grow flex justify-center items-center px-4 py-16">
+          <Login />
+        </div>
+        {/* <Faq/> */}
+        {/* Footer stays at bottom */}
+        <Footer />
       </div>
     </div>
-  )
-}
+  );
+};
+
