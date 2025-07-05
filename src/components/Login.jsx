@@ -1,5 +1,7 @@
 import React, { useState,useRef } from 'react';
-import {validate} from "../utils/validate.js"
+import {validate} from "../utils/validate.js";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../utils/firebase.js';
 
 const Login = () => {
     const [isSignin ,setisSignin] =useState(true);
@@ -18,9 +20,27 @@ const Login = () => {
       }
       const message=validate(email.current.value, password.current.value);
       seterrorMessage(message);
-      if(username.current.value===null){
-        seterrorMessage("Username is required !")
-      }
+        if(message) return;
+        if (!message) {
+  console.log("Validation passed. Proceeding to create user.");
+}
+
+        if(!isSignin){
+          //Sign up logic
+createUserWithEmailAndPassword(auth,email.current.value, password.current.value)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    console.dir(user);
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    seterrorMessage(errorCode+":"+errorMessage);
+    // ..
+  });
+        }
     }
 
   return (
