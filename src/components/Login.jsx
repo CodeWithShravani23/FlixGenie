@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [isSignin, setisSignin] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   function handleSignIn() {
     setisSignin(!isSignin);
@@ -34,6 +34,17 @@ const Login = () => {
           // Signed up 
           const user = userCredential.user;
           console.dir(user);
+          updateProfile(auth.currentUser, {
+            displayName:username.current.value , photoURL: "https://example.com/jane-q-user/profile.jpg"
+          }).then(() => {
+            // Profile updated!
+            // ...
+          }).catch((error) => {
+             const errorMessage = error.message;
+            seterrorMessage(errorMessage);
+            // An error occurred
+            // ...
+          });
           navigate("/browse");
           // ...
         })
@@ -51,7 +62,7 @@ const Login = () => {
           // Signed in 
           const user = userCredential.user;
           console.dir(user);
-           navigate("/browse");
+          navigate("/browse");
           // ...
         })
         .catch((error) => {
