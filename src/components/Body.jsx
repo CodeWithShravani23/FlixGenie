@@ -5,6 +5,8 @@ import {createBrowserRouter} from "react-router-dom"
 import {RouterProvider} from "react-router-dom";
 import { Landing } from './Landing';
 
+
+
 const Body = () => {
     const appRouter =createBrowserRouter([
         {
