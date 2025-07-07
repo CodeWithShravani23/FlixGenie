@@ -32,7 +32,9 @@ onAuthStateChanged(auth, (user) => {
     // https://firebase.google.com/docs/reference/js/auth.user
     const {uid ,email,displayName} = user;
     // ...
-    dispath(addUser({uid:uid,email:email,displayName:displayName}));
+    dispath(addUser({uid:uid,
+                    email:email,
+                    displayName:displayName}));
   } else {
     // User is signed out
     // ...

@@ -3,11 +3,15 @@ import { validate } from "../utils/validate.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../utils/firebase.js';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/userSlice.js';
+import {updateProfile} from 'firebase/auth/web-extension';
 
 const Login = () => {
   const [isSignin, setisSignin] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
   const navigate = useNavigate();
+  const dispath=useDispatch();
 
   function handleSignIn() {
     setisSignin(!isSignin);
@@ -38,6 +42,11 @@ const Login = () => {
             displayName:username.current.value , photoURL: "https://example.com/jane-q-user/profile.jpg"
           }).then(() => {
             // Profile updated!
+              const {uid ,email,displayName} = auth.currentUser;
+                // ...
+                dispath(addUser({uid:uid,
+                                email:email,
+                                displayName:displayName}));
             // ...
           }).catch((error) => {
              const errorMessage = error.message;
