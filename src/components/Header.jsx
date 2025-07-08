@@ -5,10 +5,10 @@ import { auth } from '../utils/firebase'
 import { signOut } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { User_Avatar } from '../constant'
+import { useEffect } from 'react'
 
 
 const Header = () => {

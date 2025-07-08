@@ -14,6 +14,10 @@ const Login = () => {
 
   function handleSignIn() {
     setisSignin(!isSignin);
+    seterrorMessage(null); // clear previous error message
+  if (email.current) email.current.value = "";
+  if (password.current) password.current.value = "";
+  if (username.current) username.current.value = "";
   }
   const email = useRef(null);
   const password = useRef(null);
@@ -59,7 +63,7 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          seterrorMessage(errorCode + ":" + errorMessage);
+          seterrorMessage(errorCode);
           // ..
         });
     }
@@ -82,7 +86,7 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-black bg-opacity-75 p-8 sm:p-12 rounded-md w-[90%] max-w-md my-20">
+    <div className="bg-black bg-opacity-75 p-8 sm:p-12 rounded-md w-[90%] max-w-md ">
       <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
         <h1 className='text-white text-3xl font-bold my-3'>{isSignin ? "Sign In" : "Sign Up"}</h1>
         {
