@@ -4,20 +4,27 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 import { auth } from '../utils/firebase.js';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice.js';
-import {updateProfile} from 'firebase/auth/web-extension';
+import { updateProfile } from 'firebase/auth';
+import { useEffect } from 'react';
 
 const Login = () => {
   const [isSignin, setisSignin] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
 
   const dispath=useDispatch();
+  // Add this to your component:
 
-  function handleSignIn() {
-    setisSignin(!isSignin);
-    seterrorMessage(null); // clear previous error message
+
+useEffect(() => {
+  seterrorMessage(null);
   if (email.current) email.current.value = "";
   if (password.current) password.current.value = "";
   if (username.current) username.current.value = "";
+}, [isSignin]);
+
+
+  function handleSignIn() {
+    setisSignin(!isSignin);
   }
   const email = useRef(null);
   const password = useRef(null);
@@ -69,7 +76,7 @@ const Login = () => {
     }
     else {
       //Sign in logic
-      signInWithEmailAndPassword(auth, email, password)
+      signInWithEmailAndPassword(auth,email.current.value, password.current.value)
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
@@ -80,7 +87,7 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          seterrorMessage(errorCode + ":" + errorMessage);
+          seterrorMessage(errorCode );
         });
     }
   }
