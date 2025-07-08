@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const movieSlice=createSlice({
 name:"movie",
 initialState:{
-    nowPlayingMov:null,
+    nowPlayingMov:[],
 },
 reducers:{
     addMovies(state,action){

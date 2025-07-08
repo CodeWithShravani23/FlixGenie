@@ -45,7 +45,7 @@ const Header = () => {
   }
   return (
 
-    <div className='flex justify-between'>
+    <div className='flex justify-between w-full z-30 absolute'>
       <div className='  top-0 -m-14 '>
         <img
           className='w-60 px-4 mix-blend-multiply ml-16 bg-gradient-to-t '

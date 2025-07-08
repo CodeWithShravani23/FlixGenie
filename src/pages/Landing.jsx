@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header';
-import Login from './Login';
-import Footer from './Footer';
-import Faq from './Faq';
+import Header from '../components/Header';
+import Login from '../components/Login';
+import Footer from '../components/Footer';
+import Faq from '../components/Faq';
 
 export const Landing = () => {
   return (

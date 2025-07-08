@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Header from './Header'
-import Browse from './Browse'
+import Browse from '../pages/Browse'
 import {createBrowserRouter} from "react-router-dom"
 import {RouterProvider} from "react-router-dom";
-import { Landing } from './Landing';
+import { Landing } from '../pages/Landing';
 
 
 
