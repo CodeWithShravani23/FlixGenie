@@ -4,14 +4,38 @@ import { useSelector } from 'react-redux'
 import { auth } from '../utils/firebase'
 import { signOut } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../utils/firebase';
+import { useDispatch } from 'react-redux';
+import { addUser, removeUser } from '../utils/userSlice';
+import { User_Avatar } from '../constant'
+
 
 const Header = () => {
   const user = useSelector(store => store.user);
   const navigate = useNavigate();
+   const dispatch=useDispatch();
+
+ useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const { uid, email, displayName } = user;
+      dispatch(addUser({ uid, email, displayName }));
+    } else {
+      dispatch(removeUser());
+    }
+  });
+
+  // ✅ Cleanup function to unsubscribe
+  return () => {
+    unsubscribe();
+  };
+}, []);
+
   const handleSignOut = () => {
     signOut(auth).then(() => {
       // Sign-out successful.
-      navigate("/");
+   
     }).catch((error) => {
       // An error happened.
       navigate("/error");
@@ -32,7 +56,7 @@ const Header = () => {
         (<div className="flex items-center space-x-4 mr-6">
           <img
             alt="userLogo"
-            src="https://avatars.githubusercontent.com/u/6759280?v=4"
+            src={User_Avatar}
             className="w-10 h-10 rounded-s"
           />
           <button

@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import { validate } from "../utils/validate.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../utils/firebase.js';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice.js';
 import {updateProfile} from 'firebase/auth/web-extension';
@@ -10,7 +9,7 @@ import {updateProfile} from 'firebase/auth/web-extension';
 const Login = () => {
   const [isSignin, setisSignin] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
-  const navigate = useNavigate();
+
   const dispath=useDispatch();
 
   function handleSignIn() {
@@ -54,7 +53,7 @@ const Login = () => {
             // An error occurred
             // ...
           });
-          navigate("/browse");
+        
           // ...
         })
         .catch((error) => {
@@ -71,7 +70,7 @@ const Login = () => {
           // Signed in 
           const user = userCredential.user;
           console.dir(user);
-          navigate("/browse");
+     
           // ...
         })
         .catch((error) => {
