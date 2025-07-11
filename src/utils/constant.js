@@ -20,4 +20,5 @@ export const options = {
   }
 };
 export const Vdourl = 'https://api.themoviedb.org/3/movie/552524/videos?language=en-US';
+export const imgUrl="https://image.tmdb.org/t/p/w200";
 
