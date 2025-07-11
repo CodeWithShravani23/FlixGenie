@@ -19,5 +19,5 @@ export const options = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYjI2MjEzY2Q3ZjllZjRlOWI2MWU3NGRhZTQzYmRlNiIsIm5iZiI6MTc1MTk4Njc1OS44MjMsInN1YiI6IjY4NmQzMjQ3ODFiNDY2NzUzNjU0MDQ4YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.B8GK-5bPoCG5rCkiQT6f3cJBxQSTGTXQxbqo5eygWXI'
   }
 };
-export const Vdourl = 'https://api.themoviedb.org/3/movie/1087192/videos?language=en-US';
+export const Vdourl = 'https://api.themoviedb.org/3/movie/552524/videos?language=en-US';
 

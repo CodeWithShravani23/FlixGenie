@@ -1,16 +1,20 @@
 import { useEffect } from "react";
-import { options, Vdourl } from "../utils/constant";
-import { useDispatch, useSelector } from "react-redux";
+import { options} from "../utils/constant";
+import { useDispatch } from "react-redux";
 import {addTrailer} from "../utils/movieSlice"
 
-const useVdoTrailer =()=>{
+const useVdoTrailer =(movieid)=>{
  
   const dispatch=useDispatch();
     console.log("hook loaded");
 
     const getVdoTrailer = async () => {  
       try {
-        const data = await fetch(Vdourl, options);
+       const data = await fetch(
+  `https://api.themoviedb.org/3/movie/${movieid}/videos?language=en-US`,
+  options
+);
+
         const json = await data.json();
         // console.log(json.results);
         // dispatch(addMovies(json.results));
