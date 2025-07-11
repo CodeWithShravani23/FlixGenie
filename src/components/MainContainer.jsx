@@ -9,13 +9,13 @@ const MainContainer = () => {
   console.log("Movies not loaded yet");
   return null;
 }
-    const MainMovie=Movies[0];
+    const MainMovie=Movies[12];
     console.log(MainMovie);
-    const {title,overview}=MainMovie;
+    const {title,overview,id}=MainMovie;
   return (
     <div>
     <Vdotitle title={title} overview={overview}/>
-    <Vdobg/>
+    <Vdobg movie={id}/>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Vdotitle = ({ title, overview }) => {
   return (
-    <div className="absolute top-0 left-0 w-full h-full flex items-center px-8 md:px-16 bg-gradient-to-r from-black via-transparent to-transparent z-20">
+    <div className="absolute top-0 left-0  h-full flex items-center px-8 md:px-16 bg-gradient-to-r from-black via-transparent to-transparent z-20 w-screen aspect-video">
       <div className="max-w-xl space-y-4 text-white">
         <h1 className="text-3xl md:text-5xl font-extrabold drop-shadow-lg">
           {title}
