@@ -23,3 +23,8 @@ export const options = {
 export const Vdourl = 'https://api.themoviedb.org/3/movie/552524/videos?language=en-US';
 export const imgUrl="https://image.tmdb.org/t/p/w200";
 
+export const popurl="https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/movie/popular&language=en-US&page=1"
+export const upurl="https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/movie/upcoming&language=en-US&page=1"
+export const topurl="https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/movie/top_rated&language=en-US&page=1"
+
+

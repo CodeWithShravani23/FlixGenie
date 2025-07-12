@@ -56,6 +56,9 @@ const Header = () => {
       {/* Right: User Avatar + Sign Out */}
       {user &&
         (<div className="flex items-center space-x-4 mr-6">
+          <div>
+            <button className='px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md font-semibold transition'>Genie</button>
+          </div>
           <img
             alt="userLogo"
             src={User_Avatar}
