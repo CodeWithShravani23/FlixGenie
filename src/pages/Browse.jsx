@@ -7,7 +7,10 @@ import usePopularMov from '../hooks/usePopularMov';
 import useTopRatedMov from '../hooks/useTopRatedMov';
 import useUpcomingMov from '../hooks/useUpcomingMov';
 import Genie from '../components/Genie';
+import { useSelector } from 'react-redux';
+
 const Browse = () => {
+  const showGenie=useSelector(store=>store.genie.toggle);
   useNowPlayingMov();
   usePopularMov();
   useTopRatedMov();
@@ -16,9 +19,10 @@ const Browse = () => {
   return (
   <div className="bg-black min-h-screen text-white">
     <Header />
-    <Genie/>
+    {showGenie? <Genie/>:(<>
     <MainContainer  />
-    <SecContainer/>
+    <SecContainer/></>)}
+   
     
   </div>
   );
