@@ -11,8 +11,9 @@ const useVdoTrailer =(movieid)=>{
     const getVdoTrailer = async () => {  
       try {
        const data = await fetch(
-  `https://api.themoviedb.org/3/movie/${movieid}/videos?language=en-US`
+  `https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/movie/${movieid}/videos&language=en-US`
 );
+
 
         const json = await data.json();
         // console.log(json.results);
