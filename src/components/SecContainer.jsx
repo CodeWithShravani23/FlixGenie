@@ -8,7 +8,7 @@ const SecContainer = () => {
   return (
     <div className="bg-black">
       {Movies?.nowPlayingMov && (
-        <MovieList title="Now Playing" movies={Movies.nowPlayingMov} />
+        <MovieList  title="Now Playing" movies={Movies.nowPlayingMov} />
       )}
 
       {/* Uncomment below to add more rows */}

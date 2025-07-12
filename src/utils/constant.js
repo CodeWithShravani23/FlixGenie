@@ -11,7 +11,8 @@ export const User_Avatar = "https://avatars.githubusercontent.com/u/6759280?v=4"
 // };
 // console.log("TOKEN:", process.env.REACT_APP_TMDB_API_TOKEN);
 
-export const url = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
+// export const url ='https://api.themoviedb.org/3/movie/now_playing?page=1';
+export const url= "https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/movie/now_playing&language=en-US&page=1"
 export const options = {
   method: 'GET',
   headers: {

@@ -11,8 +11,7 @@ const useVdoTrailer =(movieid)=>{
     const getVdoTrailer = async () => {  
       try {
        const data = await fetch(
-  `https://api.themoviedb.org/3/movie/${movieid}/videos?language=en-US`,
-  options
+  `https://api.themoviedb.org/3/movie/${movieid}/videos?language=en-US`
 );
 
         const json = await data.json();
