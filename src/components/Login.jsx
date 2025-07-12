@@ -13,8 +13,6 @@ const Login = () => {
 
   const dispath=useDispatch();
   // Add this to your component:
-
-
 useEffect(() => {
   seterrorMessage(null);
   if (email.current) email.current.value = "";

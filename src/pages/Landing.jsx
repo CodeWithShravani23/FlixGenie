@@ -5,6 +5,11 @@ import Footer from '../components/Footer';
 import Faq from '../components/Faq';
 
 export const Landing = () => {
+  //handle get started button
+  const handleGetStarted=()=>{
+
+  }
+  
   return (
     <div className="relative min-h-screen w-full text-white">
       {/* Background Image */}
@@ -22,7 +27,9 @@ export const Landing = () => {
       {/* Content */}
       <div className="relative z-20 flex flex-col min-h-screen">
         <Header />
-
+        <div className='flex justify-center items-center'> 
+          <button onClick={handleGetStarted} className='bg-[rgb(229,9,20)] opacity-70 hover:bg-red-700 text-white font-semibold py-3 rounded mt-2'>Get Started</button>
+        </div>
         {/* Login Section */}
         <div className="flex-grow flex justify-center items-center px-4 py-16">
           <Login />

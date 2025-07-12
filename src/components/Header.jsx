@@ -43,6 +43,10 @@ const Header = () => {
       navigate("/error");
     });
   }
+  //handle genie click
+  const handleGenieClick=()=>{
+    
+  }
   return (
 
     <div className='flex justify-between w-full z-30 absolute'>
@@ -57,7 +61,7 @@ const Header = () => {
       {user &&
         (<div className="flex items-center space-x-4 mr-6">
           <div>
-            <button className='px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md font-semibold transition'>Genie</button>
+            <button onClick={handleGenieClick} className='px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-semibold transition'>Genie</button>
           </div>
           <img
             alt="userLogo"
