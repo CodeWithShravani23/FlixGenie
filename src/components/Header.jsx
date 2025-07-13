@@ -14,6 +14,7 @@ import { toggleGenie } from '../utils/genieSlice'
 
 const Header = () => {
   const user = useSelector(store => store.user);
+  const showGenie = useSelector(store => store.genie.toggle);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -61,10 +62,10 @@ const Header = () => {
       {/* Right: User Avatar + Sign Out */}
       {user &&
         (<div className="flex items-center space-x-4 mr-6">
-          <div>
+           (<div>
             <button onClick={handleGenieClick} className='px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-semibold transition'>Genie</button>
-          </div>
-          <img
+          </div>)
+          <img 
             alt="userLogo"
             src={User_Avatar}
             className="w-10 h-10 rounded-s"
