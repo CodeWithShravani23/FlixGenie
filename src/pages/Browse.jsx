@@ -10,21 +10,21 @@ import Genie from '../components/Genie';
 import { useSelector } from 'react-redux';
 
 const Browse = () => {
-  const showGenie=useSelector(store=>store.genie.toggle);
+  const showGenie = useSelector(store => store.genie.toggle);
   useNowPlayingMov();
   usePopularMov();
   useTopRatedMov();
   useUpcomingMov();
 
   return (
-  <div className="bg-black min-h-screen text-white">
-    <Header />
-    {showGenie? <Genie/>:(<>
-    <MainContainer  />
-    <SecContainer/></>)}
-   
-    
-  </div>
+    <div className="bg-black min-h-screen text-white">
+      <Header />
+      {showGenie ? <Genie /> : (<>
+        <MainContainer />
+        <SecContainer /></>)}
+
+
+    </div>
   );
 
 }

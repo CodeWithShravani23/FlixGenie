@@ -9,15 +9,15 @@ import store from "../utils/appStore"
 
 export const Landing = () => {
   //handle get started button
-  const dispatch =useDispatch();
-  const showlogin=useSelector(store=>store.login.toggle);
+  const dispatch = useDispatch();
+  const showlogin = useSelector(store => store.login.toggle);
   console.log("Login toggle:", showlogin);
 
 
-  const handleGetStarted=()=>{
- console.log("Dispatching toggleLogin()");
-dispatch(toggleLogin());
-console.log("After dispatch, value is:", store.getState().login.toggle); // only works if you import store
+  const handleGetStarted = () => {
+    console.log("Dispatching toggleLogin()");
+    dispatch(toggleLogin());
+    console.log("After dispatch, value is:", store.getState().login.toggle); // only works if you import store
 
   }
 
@@ -38,21 +38,21 @@ console.log("After dispatch, value is:", store.getState().login.toggle); // only
       {/* Content */}
       <div className="relative z-20 flex flex-col min-h-screen">
         <Header />
-       {showlogin}
+        {showlogin}
 
         {/* Login Section */}
-      {showlogin ? (
-  <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50">
-  <Login />
-</div>
-): <div className="flex justify-center items-center z-30 relative mt-4">
-  <button
-    onClick={handleGetStarted}
-    className="bg-red-700 hover:bg-red-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg"
-  >
-    Get Started
-  </button>
-</div>}
+        {showlogin ? (
+          <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50">
+            <Login />
+          </div>
+        ) : <div className="flex justify-center items-center z-30 relative mt-4">
+          <button
+            onClick={handleGetStarted}
+            className="bg-red-700 hover:bg-red-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg"
+          >
+            Get Started
+          </button>
+        </div>}
 
         {/* <Faq/> */}
         {/* Footer stays at bottom */}

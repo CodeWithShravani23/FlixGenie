@@ -11,14 +11,14 @@ const Login = () => {
   const [isSignin, setisSignin] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
 
-  const dispath=useDispatch();
+  const dispath = useDispatch();
   // Add this to your component:
-useEffect(() => {
-  seterrorMessage(null);
-  if (email.current) email.current.value = "";
-  if (password.current) password.current.value = "";
-  if (username.current) username.current.value = "";
-}, [isSignin]);
+  useEffect(() => {
+    seterrorMessage(null);
+    if (email.current) email.current.value = "";
+    if (password.current) password.current.value = "";
+    if (username.current) username.current.value = "";
+  }, [isSignin]);
 
 
   function handleSignIn() {
@@ -47,22 +47,24 @@ useEffect(() => {
           const user = userCredential.user;
           console.dir(user);
           updateProfile(auth.currentUser, {
-            displayName:username.current.value , photoURL: "https://example.com/jane-q-user/profile.jpg"
+            displayName: username.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
           }).then(() => {
             // Profile updated!
-              const {uid ,email,displayName} = auth.currentUser;
-                // ...
-                dispath(addUser({uid:uid,
-                                email:email,
-                                displayName:displayName}));
+            const { uid, email, displayName } = auth.currentUser;
+            // ...
+            dispath(addUser({
+              uid: uid,
+              email: email,
+              displayName: displayName
+            }));
             // ...
           }).catch((error) => {
-             const errorMessage = error.message;
+            const errorMessage = error.message;
             seterrorMessage(errorMessage);
             // An error occurred
             // ...
           });
-        
+
           // ...
         })
         .catch((error) => {
@@ -74,18 +76,18 @@ useEffect(() => {
     }
     else {
       //Sign in logic
-      signInWithEmailAndPassword(auth,email.current.value, password.current.value)
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
           console.dir(user);
-     
+
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          seterrorMessage(errorCode );
+          seterrorMessage(errorCode);
         });
     }
   }

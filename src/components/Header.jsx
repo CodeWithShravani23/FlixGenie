@@ -15,37 +15,37 @@ import { toggleGenie } from '../utils/genieSlice'
 const Header = () => {
   const user = useSelector(store => store.user);
   const navigate = useNavigate();
-   const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
- useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const { uid, email, displayName } = user;
-      dispatch(addUser({ uid, email, displayName }));
-      navigate("/browse");
-    } else {
-      dispatch(removeUser());
-       navigate("/");
-    }
-  });
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName } = user;
+        dispatch(addUser({ uid, email, displayName }));
+        navigate("/browse");
+      } else {
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
 
-  // ✅ Cleanup function to unsubscribe
-  return () => {
-    unsubscribe();
-  };
-}, []);
+    // ✅ Cleanup function to unsubscribe
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   const handleSignOut = () => {
     signOut(auth).then(() => {
       // Sign-out successful.
-   
+
     }).catch((error) => {
       // An error happened.
       navigate("/error");
     });
   }
   //handle genie click
-  const handleGenieClick=()=>{
+  const handleGenieClick = () => {
     dispatch(toggleGenie());
   }
   return (

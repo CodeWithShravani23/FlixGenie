@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-  const Vdotitle = ({ title, overview }) => {
+const Vdotitle = ({ title, overview }) => {
   return (
     <div className="pl-6 md:pl-16 space-y-4 max-w-2xl text-white">
       <h1 className="text-3xl md:text-5xl font-bold">{title}</h1>
