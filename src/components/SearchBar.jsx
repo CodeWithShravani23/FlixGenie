@@ -5,7 +5,7 @@ const SearchBar = () => {
     <div>
         <form>
         <input type='text' placeholder='What do you wanna watch today'></input>
-        <button>Search</button>
+        <button className='p-3 m-4 bg-red-600 rounded-lg'>Search</button>
         </form>
     </div>
   )
