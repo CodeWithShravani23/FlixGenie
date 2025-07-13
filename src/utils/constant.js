@@ -7,5 +7,3 @@ export const topurl = "https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/
 
 export const imgUrl = "https://image.tmdb.org/t/p/w200";
 
-
-
