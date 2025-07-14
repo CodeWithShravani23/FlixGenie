@@ -1,12 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 const genieSlice = createSlice({
     name: 'genie',
-    initialState: { toggle: false, },
+    initialState: { toggle: false,
+                    movielist:null,
+                    moviesByGenie:[]
+     },
     reducers: {
         toggleGenie(state) {
             state.toggle = (!state.toggle);
+        },
+        addMoviesByGenie(state,action){
+            const {movielist ,moviesByGenie}=action.payload;
+            state.movielist=movielist;
+            state.moviesByGenie=moviesByGenie;
+
         }
     }
 });
-export const { toggleGenie } = genieSlice.actions;
+export const { toggleGenie,addMoviesByGenie } = genieSlice.actions;
 export default genieSlice.reducer;
