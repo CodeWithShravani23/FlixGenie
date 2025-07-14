@@ -9,7 +9,7 @@ const useUpcomingMov = () => {
     try {
       const data = await fetch(upurl);
       const json = await data.json();
-      console.log(json.results);
+    
       dispatch(addUpcoming(json.results));
     } catch (error) {
       console.error("🔥 Fetch error: ", error);

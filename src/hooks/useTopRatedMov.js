@@ -10,7 +10,7 @@ const useTopRatedMov = () => {
         try {
             const data = await fetch(topurl);
             const json = await data.json();
-            console.log(json.results);
+         
             dispatch(addToprated(json.results));
         } catch (error) {
             console.error("🔥 Fetch error: ", error);

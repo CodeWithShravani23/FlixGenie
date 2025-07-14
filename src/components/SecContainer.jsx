@@ -8,8 +8,8 @@ const SecContainer = () => {
   return (
     <div className="bg-black">
       {Movies?.nowPlayingMov && (<MovieList className="-mt-60" title="Now Playing" movies={Movies.nowPlayingMov} />)}
-      {Movies?.popularMov && (<MovieList title="Popular" movies={Movies.popularMov} />)}
       {Movies?.topRatedMov && (<MovieList title="Top Rated" movies={Movies.topRatedMov} />)}
+       {Movies?.popularMov && (<MovieList title="Popular" movies={Movies.popularMov} />)}
       {Movies?.upcomingMov && (<MovieList title="Upcoming" movies={Movies.upcomingMov} />)}
     </div>
   )

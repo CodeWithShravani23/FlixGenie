@@ -7,6 +7,7 @@ import { addUser } from '../utils/userSlice.js';
 import { updateProfile } from 'firebase/auth';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { toggleLogin } from '../utils/loginSlice.js';
 
 const Login = () => {
   const [isSignin, setisSignin] = useState(true);
@@ -92,10 +93,20 @@ const Login = () => {
         });
     }
   }
+  const onClose=()=>{
+    dispath(toggleLogin());
+  }
 
   return (
-    <div className="bg-black bg-opacity-75 p-8 sm:p-12 rounded-md w-[90%] max-w-md ">
-      <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4">
+    <div className="relative bg-black bg-opacity-75 p-8 sm:p-12 rounded-md w-[90%] max-w-md  ">
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 text-gray-400 hover:text-white text-4xl font-bold focus:outline-none"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+      <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-4 mt-10">
         <h1 className='text-white text-3xl font-bold my-3'>{isSignin ? "Sign In" : "Sign Up"}</h1>
         {
           (!isSignin) && <input ref={username}
