@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice.js';
 import { updateProfile } from 'firebase/auth';
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const Login = () => {
   const [isSignin, setisSignin] = useState(true);

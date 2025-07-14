@@ -1,21 +1,32 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-900 text-gray-300 py-10 px-4">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-red-600 text-xl font-bold tracking-wide mb-4">FlixGenie</h2>
-
-        <div className="flex flex-wrap justify-center gap-6 text-sm mb-6">
-          <a href="#" className="hover:text-white transition">About</a>
-          <a href="#" className="hover:text-white transition">Privacy Policy</a>
-          <a href="#" className="hover:text-white transition">Terms</a>
-          <a href="#" className="hover:text-white transition">Help Center</a>
-          <a href="#" className="hover:text-white transition">Contact Us</a>
+    <footer className="w-full py-8 border-t border-gray-800 mt-12">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl font-bold mb-2 bg-gradient-to-r from-red-600 to-purple-600 bg-clip-text text-transparent">
+            FlixGenie
+          </h2>
+          <p className="text-gray-400">AI-Powered Movie Magic</p>
         </div>
-
-        <p className="text-xs text-gray-500">
-          © {new Date().getFullYear()} FlixGenie. All rights reserved.
+        
+        <div className="flex flex-wrap justify-center gap-6 mb-8">
+          {['About', 'Privacy Policy', 'Terms', 'Help Center', 'Contact Us'].map((item) => (
+            <motion.a
+              key={item}
+              whileHover={{ y: -2 }}
+              className="text-gray-400 hover:text-white transition"
+              href="#"
+            >
+              {item}
+            </motion.a>
+          ))}
+        </div>
+        
+        <p className="text-center text-gray-500 text-sm">
+          © 2025 FlixGenie. All rights reserved.
         </p>
       </div>
     </footer>

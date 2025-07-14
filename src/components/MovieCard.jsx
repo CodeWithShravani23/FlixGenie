@@ -4,14 +4,14 @@ import { imgUrl } from '../utils/constant'
 const MovieCard = ({ posterPath }) => {
   console.log(posterPath);
   return (
-    <div className="w-36 md:w-40 lg:w-48 p-2">
+    <div className="min-w-[120px] md:min-w-[170px] transition-transform px-2 duration-300 transform hover:scale-105 cursor-pointer">
       <img
         alt="movie poster"
         src={imgUrl + posterPath}
-        className="w-full h-auto rounded-lg shadow-md"
+        className="rounded-md shadow-md w-full"
       />
     </div>
-  )
+  );
 }
 
 export default MovieCard

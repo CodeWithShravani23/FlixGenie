@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion';
 import Logo from "../assets/logo2.png"
 import { useSelector } from 'react-redux'
 import { auth } from '../utils/firebase'
@@ -62,9 +63,9 @@ const Header = () => {
       {/* Right: User Avatar + Sign Out */}
       {user &&
         (<div className="flex items-center space-x-4 mr-6">
-           (<div>
-            <button onClick={handleGenieClick} className='px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-semibold transition'>Genie</button>
-          </div>)
+           <div>
+            <button onClick={handleGenieClick} className='px-4 py-2 bg-purple-900 hover:bg-purple-950 text-white rounded-md font-semibold transition'>{!showGenie ?"Genie" : "Browse"}</button>
+          </div>
           <img 
             alt="userLogo"
             src={User_Avatar}

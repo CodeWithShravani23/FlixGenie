@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Login from '../components/Login';
 import Footer from '../components/Footer';
@@ -42,13 +43,13 @@ export const Landing = () => {
 
         {/* Login Section */}
         {showlogin ? (
-          <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50">
+          <div className="fixed inset-0 flex justify-center items-center  z-50">
             <Login />
           </div>
         ) : <div className="flex justify-center items-center z-30 relative mt-4">
           <button
             onClick={handleGetStarted}
-            className="bg-red-700 hover:bg-red-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg"
+            className="bg-red-700 hover:bg-red-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg mt-60"
           >
             Get Started
           </button>
