@@ -1,12 +1,28 @@
 import React, { useRef } from 'react'
 import ai from '../utils/gemini';
 import { GoogleGenAI } from "@google/genai";
+import { searchUrl } from '../utils/constant';
 
 
 const SearchBar = () => {
   const searchText = useRef(null);
+
+  //calling search movie api
+  const searchMovie = async (movie) => {
+  
+      try {
+        const data = await fetch(`https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/movie?query=${movie}&include_adult=false&language=en-US&page=1`);
+        const json = await data.json();
+        return json.results;
+       
+      } catch (error) {
+        console.error("🔥 Fetch error: ", error);
+      }
+      
+    };
+
+
   const askMovie = async () => {
-    console.log(searchText.current.value);
     //Make an Api call to google gemini
   const geminiQuery=`act as a movie recommendation system and suggest some movies for the query ${searchText.current.value} give me only 5 names of movies in the form of an array`
     const response = await ai.models.generateContent({
@@ -14,8 +30,19 @@ const SearchBar = () => {
       contents: geminiQuery,
     });
     console.log(response.text);
+    const movieResponse=response.text;
+    if(!response.text){
+      console.log("error");
+    }
+
+
+  const promiseArray = movieResponse.map((movie)=>searchMovie(movie));
+  //[promise] [promise] [promise] [promise] [promise]
+  const tmdbMovies = await promise.all(promiseArray);
+  console.log(tmdbMovies);
   }
 
+  
 
   return (
     <div className=' flex justify-center items-center  '>

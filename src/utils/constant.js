@@ -6,4 +6,5 @@ export const upurl = "https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/m
 export const topurl = "https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/movie/top_rated&language=en-US&page=1"
 
 export const imgUrl = "https://image.tmdb.org/t/p/w200";
+ export const searchUrl = 'https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/movie?include_adult=false&language=en-US&page=1';
 
