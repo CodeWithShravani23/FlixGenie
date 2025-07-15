@@ -14,8 +14,12 @@ const genieSlice = createSlice({
             state.movielist=movielist;
             state.moviesByGenie=moviesByGenie;
 
+        },
+        removeMovies(state){
+            state.movielist=null;
+            state.moviesByGenie=[];
         }
     }
 });
-export const { toggleGenie,addMoviesByGenie } = genieSlice.actions;
+export const { toggleGenie,addMoviesByGenie,removeMovies } = genieSlice.actions;
 export default genieSlice.reducer;

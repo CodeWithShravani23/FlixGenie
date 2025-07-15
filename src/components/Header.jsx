@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { User_Avatar } from '../utils/constant'
 import { useEffect } from 'react'
-import { toggleGenie } from '../utils/genieSlice'
+import { removeMovies, toggleGenie } from '../utils/genieSlice'
 
 
 const Header = () => {
@@ -49,6 +49,8 @@ const Header = () => {
   //handle genie click
   const handleGenieClick = () => {
     dispatch(toggleGenie());
+    dispatch(removeMovies());
+    
   }
   return (
 
