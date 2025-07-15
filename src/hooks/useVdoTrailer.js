@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { options } from "../utils/constant";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTrailer } from "../utils/movieSlice"
 
 const useVdoTrailer = (movieid) => {
 
   const dispatch = useDispatch();
+  const vdoTrailer =useSelector(store=>store.movie.movieTrailer)
   console.log("hook loaded");
 
   const getVdoTrailer = async () => {
@@ -27,7 +28,7 @@ const useVdoTrailer = (movieid) => {
   };
 
   useEffect(() => {
-    getVdoTrailer();
+   !vdoTrailer && getVdoTrailer();
   }, []);
 
 
