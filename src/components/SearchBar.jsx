@@ -1,60 +1,45 @@
 import React, { useRef } from 'react'
 import ai from '../utils/gemini';
-import { GoogleGenAI } from "@google/genai";
-import { searchUrl } from '../utils/constant';
+
 import { useDispatch } from 'react-redux';
 import { addMoviesByGenie } from '../utils/genieSlice';
 
 
 const SearchBar = () => {
   const searchText = useRef(null);
-  const dispatch=useDispatch();
-
-  // //calling search movie api
-
-   const searchMovie = async (movie) => {
-  
-      try {
- const data = await fetch(`https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/search/movie&query=${encodeURIComponent(movie)}&include_adult=false&language=en-US&page=1`);
-        const json = await data.json();
-       
-         return json.results;
-       
-     } catch (error) {
-        console.error("🔥 Fetch error: ", error);
-       }
-      
-     };
+  const dispatch = useDispatch();
 
 
+  const searchMovie = async (movie) => {
+
+    try {
+      const data = await fetch(`https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/search/movie&query=${encodeURIComponent(movie)}&include_adult=false&language=en-US&page=1`);
+      const json = await data.json();
+
+      return json.results;
+
+    } catch (error) {
+      console.error("🔥 Fetch error: ", error);
+    }
+
+  };
   const askMovie = async () => {
     //Make an Api call to google gemini
-  const geminiQuery=`act as a movie recommendation system and suggest some movies for the query ${searchText.current.value} give me only 5 names of movies for example: don,sholey,baghi,pathaan,jawan. only 5 strings`
+    const geminiQuery = `act as a movie recommendation system and suggest some movies for the query ${searchText.current.value} give me only 5 names of movies for example: don,sholey,baghi,pathaan,jawan. only 5 strings`
     const result = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: geminiQuery,
     });
 
+    let movieResponse = result.text.split(',');
 
- let movieResponse=result.text.split(',');
-
-  
-  //   if(!response.text){
-  //     console.log("error");
-  //   }
-
-
-   const promiseArray = movieResponse.map((movie)=>searchMovie(movie));
-   //[promise] [promise] [promise] [promise] [promise]
-   const tmdbMovies = await Promise.all(promiseArray);
-   console.log(tmdbMovies);
-
-
-   //storing in redux
-   dispatch(addMoviesByGenie({movielist:movieResponse,moviesByGenie:tmdbMovies}))
-   }
-
-  
+    const promiseArray = movieResponse.map((movie) => searchMovie(movie));
+    //[promise] [promise] [promise] [promise] [promise]
+    const tmdbMovies = await Promise.all(promiseArray);
+    console.log(tmdbMovies);
+    //storing in redux
+    dispatch(addMoviesByGenie({ movielist: movieResponse, moviesByGenie: tmdbMovies }))
+  }
 
   return (
     <div className=' flex justify-center items-center  '>
