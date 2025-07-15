@@ -7,11 +7,10 @@ const Vdobg = ({ movieid }) => {
 
   const Trailer = useSelector(store => store.movie?.movieTrailer);
   if (!Trailer) {
-    console.log("trailer not loaded yet");
+
     return null;
   }
 
-  console.log(Trailer.key);
   return (
     <div className="relative w-screen h-[100vh] overflow-hidden">
       <iframe

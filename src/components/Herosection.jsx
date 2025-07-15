@@ -7,7 +7,7 @@ const Herosection = () => {
     const dispatch = useDispatch();
   
     const onGetStarted=()=>{
- console.log("Dispatching toggleLogin()");
+
     dispatch(toggleLogin());
     console.log("After dispatch, value is:", store.getState().login.toggle);
     }

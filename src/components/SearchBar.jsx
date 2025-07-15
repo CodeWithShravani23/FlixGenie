@@ -36,7 +36,7 @@ const SearchBar = () => {
     const promiseArray = movieResponse.map((movie) => searchMovie(movie));
     //[promise] [promise] [promise] [promise] [promise]
     const tmdbMovies = await Promise.all(promiseArray);
-    console.log(tmdbMovies);
+   
     //storing in redux
     dispatch(addMoviesByGenie({ movielist: movieResponse, moviesByGenie: tmdbMovies }))
   }

@@ -7,14 +7,14 @@ const MainContainer = () => {
   const Movies = useSelector(store => store.movie?.nowPlayingMov);
 
   if (!Movies || Movies.length === 0) {
-    console.log("Movies not loaded yet");
+  
     return null;
   }
 
   // ✅ Get a random index within range
 
   const MainMovie = Movies[12];
-  console.log(MainMovie);
+
 
   const { title, overview, id } = MainMovie;
 
