@@ -1,10 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { topurl } from "../utils/constant"
 import { useEffect } from "react";
 import { addToprated } from "../utils/movieSlice";
 
 const useTopRatedMov = () => {
     const dispatch = useDispatch();
+    const topRatedMovies=useSelector(store=>store.movie.topRatedMov)
     const getTopRatedMov = async () => {
 
         try {
@@ -18,7 +19,7 @@ const useTopRatedMov = () => {
     };
 
     useEffect(() => {
-        getTopRatedMov();
+       !topRatedMovies && getTopRatedMov();
     }, []);
 }
 export default useTopRatedMov;
