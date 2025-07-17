@@ -5,7 +5,7 @@ import { addPopular } from "../utils/movieSlice";
 
 const usePopularMov = () => {
     const dispatch = useDispatch();
-    const popolarMovies=useSelector(store=>store.movie.popularMov)
+    const popularMovies=useSelector(store=>store.movie.popularMov)
     const getPopularMov = async () => {
 
         try {
@@ -19,7 +19,10 @@ const usePopularMov = () => {
     };
 
     useEffect(() => {
-        !popolarMovies && getPopularMov();
+       if (!popularMovies || popularMovies.length === 0) {
+  getPopularMov();
+}
+
     }, []);
 }
 export default usePopularMov;
