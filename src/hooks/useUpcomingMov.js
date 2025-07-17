@@ -18,7 +18,9 @@ const useUpcomingMov = () => {
   };
 
   useEffect(() => {
-    !upcomingMovies && getUpcomingMov();
+    if (!upcomingMovies || upcomingMovies.length === 0) {
+  getUpcomingMov();
+}
   }, []);
 }
 export default useUpcomingMov;

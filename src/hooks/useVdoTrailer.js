@@ -28,7 +28,10 @@ const useVdoTrailer = (movieid) => {
   };
 
   useEffect(() => {
-   !vdoTrailer && getVdoTrailer();
+  if (!vdoTrailer || vdoTrailer.length === 0) {
+  getVdoTrailer();
+}
+
   }, []);
 
 
