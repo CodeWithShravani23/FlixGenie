@@ -19,7 +19,10 @@ const useTopRatedMov = () => {
     };
 
     useEffect(() => {
-       !topRatedMovies && getTopRatedMov();
+      if (!topRatedMovies || topRatedMovies.length === 0) {
+  getTopRatedMov();
+}
+
     }, []);
 }
 export default useTopRatedMov;
