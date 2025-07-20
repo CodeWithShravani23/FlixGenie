@@ -1,25 +1,33 @@
-import React from 'react'
-import MovieCard from './MovieCard'
+import React from 'react';
+import MovieCard from './MovieCard';
 
-const MovieList = ({ title, movies }) => {
-  if (!movies) return null
+const MovieList = ({ title, movies, showViewAll = false }) => {
+  if (!movies?.length) return null;
 
   return (
-    <div className="flex overflow-x-auto scrollbar-hide">
-       <div className="px-4 mx-7 ">
-      <h1 className="text-white text-xl md:text-2xl font-semibold mb-5 mt-6 ">
-        {title}
-      </h1>
-      <div className="flex overflow-x-auto space-x-4 scrollbar-hide">
+    <div className="w-full">
+      <div className="flex justify-between items-center mb-5">
+        <h2 className="text-white font-bold text-2xl md:text-3xl">
+          {title}
+        </h2>
+        {showViewAll && (
+          <button className="text-sm text-gray-300 hover:text-white transition duration-200">
+            View All →
+          </button>
+        )}
+      </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-5">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} posterPath={movie?.poster_path} />
+          <MovieCard
+            key={movie.id}
+            posterPath={movie?.poster_path}
+            title={movie?.title || movie?.name}
+          />
         ))}
       </div>
     </div>
-    </div>
-
-   
   );
-}
+};
 
-export default MovieList
+export default MovieList;
