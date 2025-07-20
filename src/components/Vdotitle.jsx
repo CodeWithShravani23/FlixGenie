@@ -1,23 +1,39 @@
 import React from 'react';
+import { FiPlay, FiInfo } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
-
-const Vdotitle = ({ title, overview }) => {
+const Vdotitle = ({ title, overview, movieId }) => {
   return (
-    <div className="pl-6 md:pl-16 space-y-4 max-w-2xl text-white">
-      <h1 className="text-3xl md:text-5xl font-bold">{title}</h1>
-      <p className="text-sm md:text-lg leading-relaxed text-white/90">{overview}</p>
-      <div className="flex space-x-4">
-        <button className="bg-white text-black px-6 py-2 font-semibold rounded hover:bg-opacity-80 transition-all">
-          ▶ Play
-        </button>
-        <button className="bg-gray-700 text-white px-6 py-2 font-semibold rounded hover:bg-opacity-80 transition-all">
-          ℹ More Info
-        </button>
+    <motion.div 
+      className="pl-6 md:pl-16 space-y-4 max-w-2xl text-white"
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.3 }}
+    >
+      <h1 className="text-3xl md:text-5xl font-bold drop-shadow-lg">{title}</h1>
+      <p className="text-sm md:text-lg leading-relaxed text-white/90 line-clamp-3">
+        {overview}
+      </p>
+      <div className="flex space-x-4 pt-2">
+        <motion.button 
+          className="flex items-center gap-2 bg-white text-black px-6 py-2 md:px-8 md:py-3 font-semibold rounded-full hover:bg-opacity-80 transition-all"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <FiPlay size={20} />
+          Play
+        </motion.button>
+        <motion.button 
+          className="flex items-center gap-2 bg-gray-600/70 text-white px-6 py-2 md:px-8 md:py-3 font-semibold rounded-full hover:bg-opacity-80 transition-all"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <FiInfo size={20} />
+          More Info
+        </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-
-
-export default Vdotitle;
+export default React.memo(Vdotitle);

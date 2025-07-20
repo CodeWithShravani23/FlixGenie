@@ -1,33 +1,32 @@
-import React from 'react'
-import useVdoTrailer from '../hooks/useVdoTrailer';
+import React from 'react';
 import { useSelector } from 'react-redux';
+import useVdoTrailer from '../hooks/useVdoTrailer';
 
-const Vdobg = ({ movieid }) => {
-  useVdoTrailer(movieid);
+const Vdobg = ({ movieId }) => {
+  useVdoTrailer(movieId);
+  const trailer = useSelector(store => store.movie?.movieTrailer);
 
-  const Trailer = useSelector(store => store.movie?.movieTrailer);
-  if (!Trailer) {
-
-    return null;
+  if (!trailer) {
+    return (
+      <div className="relative w-full h-[56.25vw] min-h-[400px] bg-gray-900 animate-pulse">
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+      </div>
+    );
   }
 
   return (
-    <div className="relative w-screen h-[100vh] overflow-hidden">
+    <div className="relative w-full h-[56.25vw] min-h-[400px] overflow-hidden">
       <iframe
-        className="absolute top-1/2 left-1/2 w-[120vw] h-[120vh] -translate-x-1/2 -translate-y-1/2 scale-150"
-        src={`https://www.youtube.com/embed/${Trailer?.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${Trailer?.key}&modestbranding=1&rel=0&disablekb=1`}
-        title="Movie Trailer"
-        allow="autoplay; fullscreen"
-        referrerPolicy="strict-origin-when-cross-origin"
+        className="absolute top-1/2 left-1/2 w-[177.78vh] h-[56.25vw] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2"
+        src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailer.key}&modestbranding=1&rel=0&disablekb=1&enablejsapi=1`}
+        title={`${trailer.name || 'Movie'} Trailer`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
+        loading="eager"
       />
-
-      {/* Optional: Dark gradient for title visibility */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black via-transparent to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent z-10" />
     </div>
-
-
   );
-}
+};
 
-export default Vdobg;
+export default React.memo(Vdobg);
