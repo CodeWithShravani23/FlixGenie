@@ -113,7 +113,7 @@ const HeroSection = React.memo(() => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          Watch anywhere. Cancel anytime.
+          Type the vibe. Get the watch
         </motion.p>
 
         <motion.button

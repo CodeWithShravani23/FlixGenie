@@ -1,39 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaFilm, FaRobot, FaFilter, FaUserCog, FaBolt } from 'react-icons/fa';
+import { FaFilm, FaRobot, FaSearch, FaRocket } from "react-icons/fa";
+import { FaWandMagicSparkles } from "react-icons/fa6";
+
+
 
 const Features = () => {
   const features = [
-    {
-      icon: <FaFilm className="text-3xl" />,
-      title: "Browse Trending Movies",
-      description: "Powered by TMDb API - Discover the hottest movies and shows updated daily",
-      accent: "text-red-500"
-    },
-    {
-      icon: <FaRobot className="text-3xl" />,
-      title: "Get Smart Recommendations",
-      description: "AI-generated suggestions tailored just for you based on your preferences",
-      accent: "text-purple-400"
-    },
-    {
-      icon: <FaFilter className="text-3xl" />,
-      title: "Genre-Based Filtering",
-      description: "Find exactly what you're in the mood for with powerful filtering options",
-      accent: "text-blue-400"
-    },
-    {
-      icon: <FaUserCog className="text-3xl" />,
-      title: "Personalized Results",
-      description: "AI learns your tastes to deliver content you'll love",
-      accent: "text-amber-400"
-    },
-    {
-      icon: <FaBolt className="text-3xl" />,
-      title: "Responsive & Fast UI",
-      description: "Lightning fast browsing experience on any device",
-      accent: "text-green-400"
-    }
+   {
+    icon: <FaWandMagicSparkles className="text-3xl" />,
+    title: "Ask the Genie",
+    description: "Describe the type of movie you want to watch and let our AI Genie do the magic!",
+    accent: "text-red-500"
+  },
+  {
+    icon: <FaFilm className="text-3xl" />,
+    title: "Curated Movie Suggestions",
+    description: "Powered by TMDb API — Get curated lists based on your input, updated daily",
+    accent: "text-purple-400"
+  },
+  {
+    icon: <FaSearch className="text-3xl" />,
+    title: "Smart Search by Description",
+    description: "Type in a mood, plot, or vibe — get titles that match the experience you're seeking",
+    accent: "text-blue-400"
+  },
+  {
+    icon: <FaRobot className="text-3xl" />,
+    title: "AI-Powered Discovery",
+    description: "Leverages an intelligent API to find movies that fit your custom prompts",
+    accent: "text-amber-400"
+  },
+  {
+    icon: <FaRocket className="text-3xl" />,
+    title: "Seamless & Fast Experience",
+    description: "Built with React & Tailwind — optimized for speed and responsiveness",
+    accent: "text-green-400"
+  }
   ];
 
   return (
