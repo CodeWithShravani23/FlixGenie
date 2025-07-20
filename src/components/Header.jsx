@@ -46,7 +46,7 @@ const Header = () => {
 
   return (
     <motion.div 
-      className="flex justify-between items-center w-full z-30 absolute px-8 py-4"
+      className="flex justify-between items-center w-full z-30 absolute px-8 "
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 120 }}

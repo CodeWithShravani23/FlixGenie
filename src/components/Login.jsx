@@ -162,7 +162,7 @@ const Login = () => {
               type="email"
               value={formData.email}
               onChange={handleInputChange}
-              placeholder="EMAIL"
+              placeholder="email"
               className="w-full p-3 rounded bg-gray-900 placeholder-red-900 text-white focus:outline-none focus:ring-1 focus:ring-red-600 uppercase tracking-wide text-sm font-bold border border-gray-800"
             />
           </div>

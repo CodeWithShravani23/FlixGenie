@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const Vdotitle = ({ title, overview, movieId }) => {
   return (
     <motion.div 
-      className="pl-6 md:pl-16 space-y-4 max-w-2xl text-white"
+     className="px-2 md:px-0 lg:pl-16 space-y-4 max-w-2xl text-white z-10 relative"
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.3 }}
@@ -14,7 +14,7 @@ const Vdotitle = ({ title, overview, movieId }) => {
       <p className="text-sm md:text-lg leading-relaxed text-white/90 line-clamp-3">
         {overview}
       </p>
-      <div className="flex space-x-4 pt-2">
+      <div className="flex space-x-4 pt-2 ">
         <motion.button 
           className="flex items-center gap-2 bg-white text-black px-6 py-2 md:px-8 md:py-3 font-semibold rounded-full hover:bg-opacity-80 transition-all"
           whileHover={{ scale: 1.05 }}

@@ -37,7 +37,7 @@ const MainContainer = () => {
     >
       <Vdobg movieId={id} />
       
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent z-10">
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent z-0">
         <div className="h-full flex items-center px-4 md:px-12 lg:px-24">
           <Vdotitle 
             title={title} 
