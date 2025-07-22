@@ -118,7 +118,7 @@ const HeroSection = React.memo(() => {
 
         <motion.button
           onClick={onGetStarted}
-          className="bg-red-700 mb-14 hover:bg-red-800 text-white font-bold py-3 px-8 rounded-full shadow-xl transition-all duration-300 hover:scale-105 text-lg flex items-center mx-auto"
+          className="bg-red-700 lg:mb-36 sm:mb-0 hover:bg-red-800 text-white font-bold py-3 px-8 rounded-full shadow-xl transition-all duration-300 hover:scale-105 text-lg flex items-center mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
