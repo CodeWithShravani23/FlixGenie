@@ -18,7 +18,8 @@ const Browse = () => {
 
   return (
     <div>
-      <Header />
+      <div className="sm:mb-3"><Header /></div>
+      
       {showGenie ? (
         <Genie />
       ) : (

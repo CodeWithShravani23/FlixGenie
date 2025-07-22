@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 const Vdotitle = ({ title, overview, movieId }) => {
   return (
     <motion.div 
-     className="px-2 md:px-0 lg:pl-3 space-y-4 max-w-2xl text-white z-10 relative"
+     className="px-2 md:px-0 lg:pl-3 space-y-4 max-w-2xl text-white z-10 relative "
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.3 }}
     >
-      <h1 className="text-3xl md:text-5xl font-bold drop-shadow-lg">{title}</h1>
+      <h1 className="text-3xl md:text-5xl font-bold drop-shadow-lg sm:text-3xl">{title}</h1>
       <p className="text-sm md:text-lg leading-relaxed text-white/90 line-clamp-3">
         {overview}
       </p>

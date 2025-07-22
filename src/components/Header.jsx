@@ -46,7 +46,7 @@ const Header = () => {
 
   return (
     <motion.div 
-      className="flex justify-between items-center w-full z-30 absolute px-8 "
+      className="flex justify-between items-center w-full z-30 absolute px-8 sm:mb-3 -mt-9 "
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 120 }}
@@ -58,7 +58,7 @@ const Header = () => {
         className="cursor-pointer"
       >
         <img
-          className="w-48 mix-blend-multiply"
+          className="w-52 mix-blend-multiply"
           alt="logo"
           src={Logo}
           onClick={() => navigate("/browse")}
