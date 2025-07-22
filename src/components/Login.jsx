@@ -77,7 +77,7 @@ const Login = () => {
       let errorMsg = error.code;
       switch (error.code) {
         case 'auth/email-already-in-use':
-          errorMsg = 'Email already in use';
+          errorMsg = 'email already in use';
           break;
         case 'auth/invalid-email':
           errorMsg = 'Invalid email address';
@@ -147,7 +147,7 @@ const Login = () => {
                     type="text"
                     value={formData.username}
                     onChange={handleInputChange}
-                    placeholder="USERNAME"
+                    placeholder="Username"
                     className="w-full p-3 rounded bg-gray-900 placeholder-red-900 text-white focus:outline-none focus:ring-1 focus:ring-red-600 tracking-wide text-sm font-bold border border-gray-800"
                   />
                 </div>
@@ -163,7 +163,7 @@ const Login = () => {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="email"
-              className="w-full p-3 rounded bg-gray-900 placeholder-red-900 text-white focus:outline-none focus:ring-1 focus:ring-red-600 uppercase tracking-wide text-sm font-bold border border-gray-800"
+              className="w-full p-3 rounded bg-gray-900 placeholder-red-900 text-white focus:outline-none focus:ring-1 focus:ring-red-600  tracking-wide text-sm font-bold border border-gray-800"
             />
           </div>
 
@@ -174,8 +174,8 @@ const Login = () => {
               type="password"
               value={formData.password}
               onChange={handleInputChange}
-              placeholder="PASSWORD"
-              className="w-full p-3 rounded bg-gray-900 placeholder-red-900 text-white focus:outline-none focus:ring-1 focus:ring-red-600 uppercase tracking-wide text-sm font-bold border border-gray-800"
+              placeholder="Password"
+              className="w-full p-3 rounded bg-gray-900 placeholder-red-900 text-white focus:outline-none focus:ring-1 focus:ring-red-600  tracking-wide text-sm font-bold border border-gray-800"
             />
           </div>
 
