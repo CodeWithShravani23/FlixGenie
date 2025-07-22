@@ -16,14 +16,14 @@ const Vdobg = ({ movieId }) => {
 
   return (
     <div className="relative w-full h-[56.25vw] min-h-[400px] overflow-hidden">
-     <iframe
-  className="absolute top-1/2 left-1/2 w-[150vw] h-[84.375vw] -translate-x-1/2 -translate-y-1/2"
-  src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailer.key}&modestbranding=1&rel=0&disablekb=1&enablejsapi=1&fs=0&showinfo=0&iv_load_policy=3`}
-  title={`${trailer.name || 'Movie'} Trailer`}
-  allow="autoplay; encrypted-media; fullscreen"
-  allowFullScreen
-  loading="eager"
-/>
+      <iframe
+    className="absolute top-1/2 left-1/2 w-[150vw] h-[84.375vw] -translate-x-1/2 -translate-y-1/2"
+    src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&mute=1&controls=0&loop=1&playlist=${trailer.key}&modestbranding=1&rel=0&disablekb=1&enablejsapi=1&fs=0&showinfo=0&iv_load_policy=3`}
+    title={`${trailer.name || 'Movie'} Trailer`}
+    allow="autoplay; encrypted-media; fullscreen"
+    allowFullScreen
+    loading="eager"
+  />
 
 
 
