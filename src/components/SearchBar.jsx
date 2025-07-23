@@ -9,19 +9,26 @@ const SearchBar = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const searchMovie = async (movie) => {
-    try {
-      const data = await fetch(
-        `https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/search/movie&query=${encodeURIComponent(
-          movie
-        )}&include_adult=false&language=en-US&page=1`
-      );
-      const json = await data.json();
-      return json.results;
-    } catch (error) {
-      console.error('🔥 Fetch error: ', error);
-      return [];
-    }
-  };
+  try {
+    const data = await fetch(
+      `https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/search/movie&query=${encodeURIComponent(
+        movie
+      )}&include_adult=false&language=en-US&page=1`
+    );
+    const json = await data.json();
+
+    // Filter results for exact title match (case-insensitive)
+    const exactMatch = json.results?.filter(
+      (item) => item.title.toLowerCase() === movie.toLowerCase()
+    );
+
+    return exactMatch.length ? exactMatch : []; // Return only exact matches
+  } catch (error) {
+    console.error('🔥 Fetch error: ', error);
+    return [];
+  }
+};
+
 
   const askMovie = async () => {
     if (!searchText.current?.value?.trim()) return;
@@ -57,10 +64,14 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex justify-center items-center pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-10 lg:pb-12 px-4">
+    <div className="flex justify-center -mb-12 items-center pt-10 md:pt-20 lg:pt-24 pb-6 md:pb-10 lg:pb-12 px-4">
       <div className="w-full max-w-md md:max-w-xl lg:max-w-2xl">
+      
         <h1 className="text-xl xs:text-2xl sm:text-3xl font-bold text-center text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6">
-          Discover Your Next Favorite Movie
+        Speak Your Mood, Get Movie Magic!
+        </h1>
+          <h1 className="text-l xs:text-xl sm:text-2xl  text-center text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6">
+         Your Movie Genie Is Listening 🧞‍♂️
         </h1>
         
         <form onSubmit={(e) => e.preventDefault()} className="relative group">
@@ -73,7 +84,7 @@ const SearchBar = () => {
               ref={searchText}
               className="flex-grow p-2 xs:p-3 sm:p-4 rounded-2xl sm:rounded-full w-full text-white bg-gray-800 placeholder-gray-400 focus:outline-none focus:ring-0 border-none text-xs xs:text-sm sm:text-base"
               type="text"
-              placeholder="What do you want to watch today?"
+              placeholder="What's your movie wish today? "
               onKeyDown={handleKeyDown}
               aria-label="Search for movies"
               disabled={isLoading}
@@ -111,17 +122,17 @@ const SearchBar = () => {
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     />
                   </svg>
-                  <span className="text-xs xs:text-sm">Searching...</span>
+                  <span className="text-xs xs:text-sm">Genie is thinking..</span>
                 </div>
               ) : (
-                <span className="text-xs xs:text-sm sm:text-base">Search</span>
+                <span className="text-xs xs:text-sm sm:text-base">Abracadabra</span>
               )}
             </button>
           </div>
         </form>
         
         <p className="text-center mt-2 xs:mt-3 sm:mt-4 text-gray-400 text-xxs xs:text-xs sm:text-sm">
-          Try "action movies", "romantic comedies", or "90s sci-fi"
+         Say it like: "bittersweet love stories", "early 2000s teen dramas", or "offbeat coming-of-age films"
         </p>
       </div>
     </div>
