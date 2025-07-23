@@ -10,13 +10,13 @@ const Vdotitle = ({ title, overview, movieId }) => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.3 }}
     >
-      <h1 className="text-3xl md:text-5xl font-bold drop-shadow-lg sm:text-3xl">{title}</h1>
-      <p className="text-sm md:text-lg leading-relaxed text-white/90 line-clamp-3">
+      <h1 className="text-2xl md:text-5xl font-bold drop-shadow-lg">{title}</h1>
+      <p className="text-xs md:text-lg leading-relaxed text-white/90 line-clamp-3">
         {overview}
       </p>
-      <div className="flex space-x-4 pt-2 ">
+      <div className="flex space-x-4 pt-2 sm:mb-5 ">
         <motion.button 
-          className="flex items-center gap-2 bg-white text-black px-6 py-2 md:px-8 md:py-3 font-semibold rounded-full hover:bg-opacity-80 transition-all"
+          className="flex items-center gap-2 bg-white text-black px-6 py-2 md:px-8 sm:px-6 sm:py-2 md:py-3 font-semibold rounded-full hover:bg-opacity-80 transition-all"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -24,7 +24,7 @@ const Vdotitle = ({ title, overview, movieId }) => {
           Play
         </motion.button>
         <motion.button 
-          className="flex items-center gap-2 bg-gray-600/70 text-white px-6 py-2 md:px-8 md:py-3 font-semibold rounded-full hover:bg-opacity-80 transition-all"
+          className="flex items-center gap-2 bg-gray-600/70 text-white px-6 py-2 md:px-8 md:py-3 sm:px-6 sm:py-2 font-semibold rounded-full hover:bg-opacity-80 transition-all"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
