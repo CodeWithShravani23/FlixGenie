@@ -14,7 +14,7 @@ const Vdotitle = ({ title, overview, movieId }) => {
       <p className="text-xs md:text-lg leading-relaxed text-white/90 line-clamp-3">
         {overview}
       </p>
-      <div className="flex space-x-4 pt-2 sm:mb-5 ">
+      <div className="flex space-x-4 pt-2 sm:mb-8 ">
         <motion.button 
           className="flex items-center gap-2 bg-white text-black px-6 py-2 md:px-8 sm:px-6 sm:py-2 md:py-3 font-semibold rounded-full hover:bg-opacity-80 transition-all"
           whileHover={{ scale: 1.05 }}
