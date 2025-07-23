@@ -166,7 +166,6 @@ const Login = () => {
               className="w-full p-3 rounded bg-gray-900 placeholder-red-900 text-white focus:outline-none focus:ring-1 focus:ring-red-600  tracking-wide text-sm font-bold border border-gray-800"
             />
           </div>
-
           <div className="relative">
             <input
               ref={password}

@@ -17,7 +17,7 @@ const Browse = () => {
   useUpcomingMov();
 
   return (
-    <div>
+    <div className="bg-black">
       <div className="sm:mb-3"><Header /></div>
       
       {showGenie ? (
