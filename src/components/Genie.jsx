@@ -5,7 +5,10 @@ import MoviesbyGenie from './MoviesbyGenie'
 const Genie = () => {
   return (
     <div className=' min-h-screen bg-black'>
-       <SearchBar/>
+      <div className='p-24'>
+          <SearchBar/>
+      </div>
+     
        <MoviesbyGenie/>
     </div>
   )
