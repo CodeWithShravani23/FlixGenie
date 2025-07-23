@@ -46,7 +46,7 @@ const Header = () => {
 
   return (
     <motion.div 
-      className="flex justify-between items-center w-full z-30 absolute px-8 sm:mb-3 -mt-9 sm:my-3 "
+      className="flex justify-between items-center w-full z-30 absolute px-8  -mt-9 "
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 120 }}
@@ -76,14 +76,14 @@ const Header = () => {
           >
             {!showGenie ? (
               <>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 sm:w-3 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5  w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                 </svg>
                 Genie
               </>
             ) : (
               <>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:w-3 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5  mr-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
                 </svg>
                 Browse
@@ -97,13 +97,13 @@ const Header = () => {
             onMouseLeave={() => setIsHovered(false)}
           >
             <motion.div 
-              className="flex items-center space-x-2 cursor-pointer"
+              className="flex items-center space-x-3 cursor-pointer"
               whileHover={{ scale: 1.05 }}
             >
               <img 
                 alt="userLogo"
                 src={User_Avatar}
-                className="w-10 h-10 sm:rounded-full sm:w-7 sm:h-7 rounded-full border-2 border-white shadow-md"
+                className="w-10 h-10 sm:rounded-full ml-8  rounded-full border-2 border-white shadow-md"
               />
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />

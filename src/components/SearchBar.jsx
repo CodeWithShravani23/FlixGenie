@@ -57,7 +57,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex sm:mt-14 justify-center items-center pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-10 lg:pb-12 px-4">
+    <div className="flex justify-center items-center pt-12 md:pt-20 lg:pt-24 pb-6 md:pb-10 lg:pb-12 px-4">
       <div className="w-full max-w-md md:max-w-xl lg:max-w-2xl">
         <h1 className="text-xl xs:text-2xl sm:text-3xl font-bold text-center text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6">
           Discover Your Next Favorite Movie
@@ -68,7 +68,7 @@ const SearchBar = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl sm:rounded-full blur-md opacity-75 group-hover:opacity-100 transition-all duration-300" />
           
           {/* Search container */}
-          <div className="relative sm:h-30 flex flex-col sm:flex-row items-center bg-gray-900 rounded-2xl sm:rounded-full p-1 focus-within:ring-2 focus-within:ring-purple-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-900 transition-all duration-300">
+          <div className="relative flex flex-col sm:flex-row items-center bg-gray-900 rounded-2xl sm:rounded-full p-1 focus-within:ring-2 focus-within:ring-purple-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-900 transition-all duration-300">
             <input
               ref={searchText}
               className="flex-grow p-2 xs:p-3 sm:p-4 rounded-2xl sm:rounded-full w-full text-white bg-gray-800 placeholder-gray-400 focus:outline-none focus:ring-0 border-none text-xs xs:text-sm sm:text-base"
