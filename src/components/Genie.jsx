@@ -5,7 +5,7 @@ import MoviesbyGenie from './MoviesbyGenie'
 const Genie = () => {
   return (
     <div className=' min-h-screen bg-black'>
-      <div className='p-24'>
+      <div className='pt-24'>
           <SearchBar/>
       </div>
      
