@@ -94,7 +94,7 @@ const MovieTrailer = () => {
       </div>
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent px-6 py-6 text-white">
+      <div className="-mt-20 absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent px-6 py-6 text-white">
         <div className="flex items-center gap-4 mb-3">
           <h2 className="text-4xl font-bold">
             {movieDetails?.title || 'Loading Title...'}
@@ -118,7 +118,7 @@ const MovieTrailer = () => {
         <div className="flex gap-4 mt-4">
           <Link
             to="/"
-            className="bg-red-600 hover:bg-red-700 px-5 py-2 rounded text-white transition"
+            className="bg-red-600 hover:bg-red-700 px-5 py-2 rounded text-white transition mb-3"
           >
             ← Back 
           </Link>
