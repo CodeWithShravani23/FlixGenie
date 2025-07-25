@@ -67,7 +67,8 @@ const SearchBar = () => {
     <div className="flex justify-center -mb-12 items-center pt-10 md:pt-20 lg:pt-24 pb-6 md:pb-10 lg:pb-12 px-4">
       <div className="w-full max-w-md md:max-w-xl lg:max-w-2xl">
       
-        <h1 className="text-xl xs:text-2xl sm:text-3xl font-bold text-center text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6">
+        <h1 className="text-xl xs:text-2xl sm:text-3xl font-bold text-center  bg-gradient-to-r from-purple-400 via-pink-500 to-red-400 
+               text-transparent bg-clip-text drop-shadow-lg mb-3 xs:mb-4 sm:mb-5 md:mb-6">
         Speak Your Mood, Get Movie Magic!
         </h1>
           <h1 className="text-l xs:text-xl sm:text-2xl  text-center text-white mb-3 xs:mb-4 sm:mb-5 md:mb-6">

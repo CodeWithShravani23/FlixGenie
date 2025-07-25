@@ -9,10 +9,12 @@ const MoviesbyGenie = () => {
     <div className="bg-black pb-20 px-4 md:px-8 lg:px-12 xl:px-16 space-y-10">
   {movielist.length > 0 && (
     <>
-      {/* Heading */}
-      <h2 className="text-white text-xl md:text-2xl lg:text-3xl font-bold text-center pt-10">
-        🧞‍♂️ Genie found these top picks for you!
-      </h2>
+    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center pt-10 
+               bg-gradient-to-r text-white 
+               text-transparent bg-clip-text drop-shadow-lg">
+  🧞‍♂️ Genie found these top picks for you!
+</h2>
+
 
       {/* Display Movie Names First */}
       <div className="flex flex-wrap gap-3 justify-center text-white text-lg md:text-xl font-medium">
