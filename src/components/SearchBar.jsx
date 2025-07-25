@@ -37,7 +37,7 @@ const SearchBar = () => {
     try {
       const geminiQuery = `Act as a movie recommendation system and suggest some movies for the query ${
         searchText.current.value
-      }. Give me only 5 names of movies (comma separated) like: don,sholey,baghi,pathaan,jawan`;
+      }. Give me only 6 names of movies (comma separated) like: don,sholey,baghi,pathaan,jawan`;
       const result = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
         contents: geminiQuery,

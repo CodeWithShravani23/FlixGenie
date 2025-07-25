@@ -21,6 +21,7 @@ const MovieList = ({ title, movies, showViewAll = false }) => {
         {movies.map((movie) => (
           <MovieCard
             key={movie.id}
+              id={movie.id}
             posterPath={movie?.poster_path}
             title={movie?.title || movie?.name}
           />

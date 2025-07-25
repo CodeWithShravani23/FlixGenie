@@ -1,11 +1,18 @@
 import React from 'react';
 import { imgUrl } from '../utils/constant';
+import { useNavigate } from "react-router-dom";
+const MovieCard = ({ posterPath, title,id }) => {
 
-const MovieCard = ({ posterPath, title }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/movie/${id}`);
+  };
   if (!posterPath) return null;
 
+
   return (
-    <div
+    <div onClick={handleClick}
       className="group relative rounded-2xl overflow-hidden shadow-md transition-transform duration-300 hover:scale-105 hover:z-10"
     >
       <img
