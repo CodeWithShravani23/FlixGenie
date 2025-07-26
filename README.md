@@ -43,4 +43,13 @@
 
 
 
+## 📦 Installation
+
+```bash
+git clone https://github.com/CodeWithShravani23/FlixGenie.git
+cd FlixGenie
+npm install
+npm start
+
+
 
