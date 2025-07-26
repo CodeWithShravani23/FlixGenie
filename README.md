@@ -30,3 +30,17 @@
 - **HTTP Client**: Fetch API / Axios
 
 
+## 🚀 Usage
+
+1. Open the app and **Sign In** or **Sign Up** with your email and password.
+2. In the **Genie Assistant**, enter a natural prompt like:
+   I want a romantic movie set in the 90s with a tragic ending
+
+3. Browse the curated movie suggestions returned by the AI.
+4. Click any movie card to view its **trailer** and **details**.
+5. Use the **mute/unmute** toggle and **back button** during trailer playback for a seamless experience.
+
+
+
+
+
