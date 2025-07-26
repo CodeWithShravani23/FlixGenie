@@ -20,12 +20,14 @@ const MovieTrailer = () => {
         const videoData = await videoRes.json();
         const trailer = videoData.results.find((vid) => vid.type === 'Trailer');
         if (trailer) setTrailerKey(trailer.key);
+   
 
         const detailRes = await fetch(
           `https://tmdb-wrapper-xi.vercel.app/api/tmdb-proxy/?path=/movie/${id}&language=en-US`
         );
         const detailData = await detailRes.json();
         setMovieDetails(detailData);
+
       } catch (error) {
         console.error('🚨 Failed to load movie data:', error);
       }
@@ -81,17 +83,22 @@ const MovieTrailer = () => {
     <div className="fixed top-0 left-0 w-screen h-screen z-50 overflow-hidden bg-black">
       {/* YouTube Trailer */}
       <div className="absolute top-0 left-0 w-full h-full -z-10">
-        {trailerKey && (
-          <iframe
-            id="yt-player"
-            className="w-[150vw] h-[84.375vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            src={`https://www.youtube.com/embed/${trailerKey}?&mute=1&controls=0&loop=1&playlist=${trailerKey}&modestbranding=1&rel=0&disablekb=1&enablejsapi=1&fs=0&showinfo=0&iv_load_policy=3`}
-            title="Movie Trailer"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          />
-        )}
-      </div>
+  {trailerKey ? (
+    <iframe
+      id="yt-player"
+      className="w-[150vw] h-[84.375vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      src={`https://www.youtube.com/embed/${trailerKey}?&mute=1&controls=0&loop=1&playlist=${trailerKey}&modestbranding=1&rel=0&disablekb=1&enablejsapi=1&fs=0&showinfo=0&iv_load_policy=3`}
+      title="Movie Trailer"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+    />
+  ) : (
+    <div className="w-full h-full flex items-center justify-center bg-black/80 text-white text-xl font-semibold">
+      Trailer not available 😔
+    </div>
+  )}
+</div>
+
 
       {/* Overlay Content */}
       <div className="-mt-20 absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent px-6 py-6 text-white">
@@ -111,7 +118,7 @@ const MovieTrailer = () => {
 
         </div>
 
-        <div className="max-h-40 overflow-y-auto pr-2 text-gray-300 text-base leading-relaxed">
+        <div className="max-h-40 w-2/5 overflow-y-auto pr-2 text-gray-300 text-base leading-relaxed">
           {movieDetails?.overview || 'Fetching movie description...'}
         </div>
 

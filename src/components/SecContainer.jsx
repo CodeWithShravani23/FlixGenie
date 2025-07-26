@@ -24,14 +24,15 @@ const SecContainer = () => {
   };
 
   return (
-    <div className="bg-black pt-20 px-4 md:px-8 lg:px-12 xl:px-16 space-y-14">
+   <div className="bg-black pt-20 pb-20 px-4 md:px-8 lg:px-12 xl:px-16 space-y-14">
       {/* 👇 Overlap Now Playing only */}
- <div className="-mt-24 md:-mt-32 lg:-mt-40 relative z-30">
+ <div className="-mt-36 md:-mt-[300px] lg:-mt-40 relative z-30">
   {renderMovieList({ title: 'Now Playing', movies: nowPlayingMov })}
 </div>
 
       {renderMovieList({ title: 'Trending Now', movies: popularMov, showViewAll: true })}
       {renderMovieList({ title: 'Top Rated', movies: topRatedMov })}
+      
       {renderMovieList({ title: 'Coming Soon', movies: upcomingMov })}
     </div>
   );

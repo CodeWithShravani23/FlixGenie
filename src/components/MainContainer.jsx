@@ -30,7 +30,7 @@ const MainContainer = () => {
 
   return (
     <motion.div 
-      className="relative h-[56.25vw] min-h-[400px] w-full overflow-hidden"
+      className="relative h-[56.25vw] min-h-[400px] w-full "
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

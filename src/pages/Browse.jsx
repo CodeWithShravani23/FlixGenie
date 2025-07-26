@@ -25,7 +25,8 @@ const Browse = () => {
       ) : (
         <>
           <MainContainer />
-          <SecContainer />
+           <SecContainer />
+         
         </>
       )}
       </div>
